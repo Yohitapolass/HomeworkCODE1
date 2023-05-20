@@ -27,6 +27,18 @@ class Program
         } while (true);
     }
 
+    static int CalculatePascalValue(int row, int column)
+    {
+        if (column == 0 || column == row)
+        {
+            return 1;
+        }
+        else
+        {
+            return CalculatePascalValue(row - 1, column - 1) + CalculatePascalValue(row - 1, column);
+        }
+    }
+
     static void PrintPascalTriangle(int rows)
     {
         for (int i = 0; i <= rows; i++)
@@ -39,16 +51,5 @@ class Program
             Console.WriteLine();
         }
     }
-
-    static int CalculatePascalValue(int row, int column)
-    {
-        if (column == 0 || column == row)
-        {
-            return 1;
-        }
-        else
-        {
-            return CalculatePascalValue(row - 1, column - 1) + CalculatePascalValue(row - 1, column);
-        }
-    }
+    
 }
